@@ -1,0 +1,27 @@
+{
+  "development": {
+    "username": "nhan",
+    "password": "cdEGTa4uQI3fexLv7ugumbxT8h8dT2d7",
+    "database": "tuan8db_h9tr",
+    "host": "dpg-clhb467jc5ks73eklu60-a.singapore-postgres.render.com",
+    "dialect": "postgres",
+    "port": 5432,
+    "dialectOptions": {
+      "ssl": {}
+    }
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
