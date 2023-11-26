@@ -5,7 +5,7 @@ const Op = sequelize.Op;
 
 
 controller.showList = async (req, res) => {
-    const blogsPerPage = 1;
+    const blogsPerPage = 2;
     const {category, tag} = req.query;
     const minPage = 1;
     const page = isNaN(req.query.page) ? minPage : parseInt(req.query.page);
