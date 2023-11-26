@@ -5,7 +5,7 @@ const Op = sequelize.Op;
 
 
 controller.showList = async (req, res) => {
-    const blogsPerPage = 2;
+    const blogsPerPage = 1;
     const {category, tag} = req.query;
     const minPage = 1;
     const page = isNaN(req.query.page) ? minPage : parseInt(req.query.page);
@@ -64,6 +64,7 @@ controller.showList = async (req, res) => {
     }
 
     res.locals.blogs = blogs;
+    res.locals.url = req.url.slice(1);
     return res.render("index");
 }
 
@@ -82,6 +83,8 @@ controller.showDetails = async (req, res) => {
 
     res.locals.categories = [res.locals.blog.Category];
     res.locals.tags = [...res.locals.blog.Tags];
+    res.locals.url = req.url.slice(1);
+    console.log(res.locals.url);
     return res.render("details");
 }
 

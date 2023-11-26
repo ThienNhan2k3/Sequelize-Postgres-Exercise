@@ -21,6 +21,23 @@ app.engine('hbs', handlebars.engine({
                 month: 'long',
                 day: "numeric"
             });
+        },
+        addQueryStringToUrl: (url, key, value) => {
+            console.log(url);
+            const index = url.indexOf(key);
+            if (index === -1) {
+                url += (url.indexOf("?") === -1) ? `?${key}=${value}` : `&${key}=${value}`;
+            } else {
+                let endIndex = url.length;
+                for (let i = index; i < url.length; i++) {
+                    if (url[i] === "&") {
+                        endIndex = i;
+                        break;
+                    }
+                }
+                url = url.substring(0, index) + `${key}=${value}` + url.substring(endIndex);
+            }
+            return url;
         }
     }
 }));
